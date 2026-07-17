@@ -1,9 +1,5 @@
-function App() {
-  return (
-    <div>
-      <h1>OrbitMind AI</h1>
-    </div>
-  );
-}
+import AppRoutes from "./routes/AppRoutes";
 
-export default App;
+export default function App() {
+  return <AppRoutes />;
+}
