@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import MainLayout from "../layouts/MainLayout";
+import ProtectedRoute from "./ProtectedRoute";
 
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -21,10 +22,14 @@ export default function AppRoutes() {
       {/* Pages WITH the navbar (wrapped by MainLayout) */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<Home />} />
+
+        <Route element={<ProtectedRoute />}>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/satellites" element={<Satellites />} />
         <Route path="/alerts" element={<CollisionAlerts />} />
         <Route path="/reports" element={<Reports />} />
+        </Route>
+
       </Route>
 
       {/* Catch-all 404 */}
